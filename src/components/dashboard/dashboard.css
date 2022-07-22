@@ -1,0 +1,129 @@
+.ListHeader {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.ListHeader header {
+  font-size: 35px;
+}
+
+.ListHeader button {
+  height: 50px;
+  width: 140px;
+  align-self: flex-end;
+  margin-right: 20px;
+  background-color: #0f2c6e;
+  color: white;
+  border-radius: 7px;
+}
+
+.List {
+  height: 90px;
+  width: 80%;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchBar {
+  background-color: #eff3ff;
+  height: 90px;
+  width: 80%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.SearchBar input {
+  border-radius: 10px;
+  border: 1px solid #d9d9d9d9;
+  width: 350px;
+  height: 40px;
+  margin-left: 20px;
+  margin-right: 10px;
+  padding-left: 10px;
+}
+
+.SearchBar select {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9d9;
+  width: 150px;
+  height: 40px;
+  margin: 10px;
+}
+
+.SearchBar button {
+  background-color: #0f2c6e;
+  color: white;
+  border-radius: 7px;
+  border: 1px solid #d9d9d9d9;
+  width: 50px;
+  height: 40px;
+}
+
+.List {
+  border-radius: 8px;
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 500px;
+}
+
+.List table {
+  border-collapse: collapse;
+}
+
+.List table thead {
+  background-color: #eff3ff;
+  color: #0f2c6e;
+  white-space: nowrap;
+  height: 50px;
+}
+
+.List table thead th {
+  padding: 15px;
+  font-weight: normal;
+}
+
+.List table tr td {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  height: 67px;
+  justify-content: center;
+  align-items: center;
+}
+.List table tr input {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+/* 
+.List .ListHeader {
+  background-color: #eff3ff;
+  width: 100%;
+  height: 50px; */
+/* display: flex;
+  justify-content: space-around;
+  align-items: center; */
+/*
+}
+.List .ListItem {
+  padding: 0;
+}
+
+.List .ListItem td {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  padding-bottom: 10px;
+} */

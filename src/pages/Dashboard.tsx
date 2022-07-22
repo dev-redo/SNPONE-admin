@@ -1,13 +1,33 @@
 import Layout from "../components/layout/Layout";
-import { Typography } from "@mui/material";
-import React from "react";
+import ListHeader from "../components/dashboard/ListHeader";
+import SearchBar from "../components/dashboard/SearchBar";
+import List from "../components/dashboard/List";
+import Footer from "../components/dashboard/Footer";
+
+// import "../dashboard.css";
+
+const sortOptionList = [
+  // TODO: 확정 아님
+  { value: "latest", name: "최신순" },
+  { value: "oldest", name: "오래된 순" },
+];
+
+const filterOptionList = [
+  { value: "checked", name: "당첨" },
+  { value: "unchecked", name: "미당첨" },
+];
 
 const Dashboard = () => {
   return (
     <Layout>
-      <Typography variant="h6" sx={{ mt: 6, mb: 2 }}>
-        유저관리 테이블 // 작업중
-      </Typography>
+      <ListHeader />
+      <SearchBar
+        handleChagne={() => {}}
+        optionList1={sortOptionList}
+        optionList2={filterOptionList}
+      />
+      <List />
+      <Footer />
     </Layout>
   );
 };
