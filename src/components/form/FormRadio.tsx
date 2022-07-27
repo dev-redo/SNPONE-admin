@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  FormControl,
-  FormLabel,
-  FormControlLabel,
-  Radio,
-  RadioGroup,
-  Typography,
-  Button,
-  Checkbox,
-  styled,
-} from "@mui/material";
+import { FormControlLabel, Radio, RadioGroup, styled } from "@mui/material";
 import { Controller } from "react-hook-form";
 
 interface RadioProps {

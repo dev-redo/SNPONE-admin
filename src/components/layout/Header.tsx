@@ -1,11 +1,9 @@
 import React from "react";
-import { Box, Toolbar, styled, IconButton, Badge, Avatar } from "@mui/material";
+import { Box, Toolbar, styled, Badge } from "@mui/material";
 import Styled from "styled-components";
 
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
-import StackedLineChartIcon from "@mui/icons-material/StackedLineChart";
 import SettingsIcon from "@mui/icons-material/Settings";
-import PhoneAndroidIcon from "@mui/icons-material/PhoneAndroid";
 import Logo from "../../static/images/d.png";
 import ButtonAnimation from "../../elements/Animations/ButtonAnimation";
 import { Link, useNavigate } from "react-router-dom";

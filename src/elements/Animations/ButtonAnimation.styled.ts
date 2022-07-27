@@ -9,7 +9,6 @@ export const Container = styled.div`
   width: 4rem;
   height: 3rem;
   cursor: pointer;
-  /* background-color: #f6e58d; */
 `;
 
 export const LottieWrapper = styled(Lottie)`

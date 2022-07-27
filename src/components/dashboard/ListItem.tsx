@@ -7,8 +7,6 @@ import { useRecoilState } from "recoil";
 import { applicantAllData } from "../../store/dashboard";
 import { replaceItemAtIndex } from "../../util/replaceItemIndex";
 
-/* eslint-disable react/prop-types */
-
 interface PropsType {
   data: Applicant;
   index: number;

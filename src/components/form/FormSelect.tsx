@@ -1,10 +1,4 @@
-import {
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  Select,
-  MenuItem,
-} from "@mui/material";
+import { Select, MenuItem } from "@mui/material";
 import { Controller } from "react-hook-form";
 
 interface SelectProps {

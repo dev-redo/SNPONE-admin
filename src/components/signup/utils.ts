@@ -1,6 +1,6 @@
 export const RegexName = {
-  regex: /^[가-힣]{2,4}$/,
-  message: "이름 형식이 올바르지 않습니다.",
+  regex: /^[가-힣]{2,10}$/,
+  message: "2자 이상의 한글을 입력해주세요.",
 };
 
 export const RegexBirth = {
@@ -10,8 +10,8 @@ export const RegexBirth = {
 };
 
 export const RegexPhone = {
-  regex: /[^0-9]/g,
-  message: "핸드폰 번호 형식이 올바르지 않습니다.",
+  regex: /^01([0|1|6|7|8|9])([0-9]{3,4})([0-9]{4})$/,
+  message: "숫자만 입력해주세요. ('-' 제외)",
 };
 
 export const RegexEmail = {

@@ -1,20 +1,12 @@
 import * as React from "react";
-import {
-  Box,
-  Checkbox,
-  IconButton,
-  Typography,
-  Toolbar,
-  AppBar,
-  useMediaQuery,
-} from "@mui/material";
+import { Box, IconButton, Toolbar, AppBar, useMediaQuery } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Logo from "../../static/images/e.png";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { activeStatus } from "../../store/global";
 import ClickAwayListener from "@mui/material/ClickAwayListener";
 import styled from "styled-components";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MobileHeader = () => {
   const [active, setActive] = useRecoilState(activeStatus);

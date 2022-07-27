@@ -1,5 +1,4 @@
 import Layout from "../components/layout/Layout";
-import { Typography } from "@mui/material";
 import React from "react";
 import Title from "../elements/Texts/Title";
 import Subtitle from "../elements/Texts/Subtitle";

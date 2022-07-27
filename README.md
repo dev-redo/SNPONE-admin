@@ -10,13 +10,13 @@
 
 # 팀원
 
-| 이름   |       팀 구성       |                                          기능 구현 및 역할                                          |
-| ------ | :-----------------: | :-------------------------------------------------------------------------------------------------: |
-| 김수빈 | 팀원 </br> Frontend |                           - 회원가입(정보입력) </br> - 회원가입(정보입력)                           |
-| 김민주 | 팀원 </br> Frontend |                           - 회원가입(정보입력) </br> - 회원가입 정보 json server 전송                           |
-| 이상지 | 팀장 </br> Frontend |                              - 표(지원현황) </br> - 표(지원현황) 관리                               |
-| 이혜림 | 팀원 </br> Frontend | - headers, routing, interactive buttons </br> - mui & lottie & outter layout </br> - 반응형 웹 구현 |
-| 홍승연 | 팀원 </br> Frontend |                                 - 표(지원현황) </br> - 표(지원현황)                                 |
+| 이름   |       팀 구성       |                                                           기능 구현 및 역할                                                            |
+| ------ | :-----------------: | :------------------------------------------------------------------------------------------------------------------------------------: |
+| 김수빈 | 팀원 </br> Frontend |                                            - 회원가입(정보입력) </br> - 회원가입 validation                                            |
+| 김민주 | 팀원 </br> Frontend |                                      - 회원가입(정보입력) </br> - 회원가입 정보 json server 전송                                       |
+| 이상지 | 팀장 </br> Frontend |                                            - admin페이지 구현 </br> - Pagenation </br> 기획                                            |
+| 이혜림 | 팀원 </br> Frontend |                  - headers, routing, interactive buttons </br> - mui & lottie & outter layout </br> - 반응형 웹 구현                   |
+| 홍승연 | 팀원 </br> Frontend | - 전체데이터 fetch 및 필터링 api 구축 </br> - 당첨여부 체크박스 toggle callback 구현 </br> - search bar 구현 </br> - csv 다운로드 구현 |
 
 </br>
 </br>
@@ -33,7 +33,7 @@
 `json-server`
 `classnames`
 `styled-components`
-
+`react-hook-form`
 </br>
 </br>
 
@@ -48,38 +48,181 @@
 # 폴더 구조
 
 ```text
-폴더 구조 정리
+📦public
+ ┣ 📂data
+ ┃ ┣ 📜city.json
+ ┃ ┣ 📜index.js
+ ┃ ┗ 📜user.json
+ ┣ 📜favicon.ico
+ ┣ 📜index.html
+ ┣ 📜logo192.png
+ ┣ 📜logo512.png
+ ┣ 📜manifest.json
+ ┗ 📜robots.txt
+ 📦src
+ ┣ 📂api
+ ┃ ┣ 📂http
+ ┃ ┃ ┗ 📜HttpRequest.ts
+ ┃ ┣ 📂instance
+ ┃ ┃ ┗ 📜instance.ts
+ ┃ ┣ 📂models
+ ┃ ┃ ┣ 📜dashboard.ts
+ ┃ ┃ ┣ 📜useCityModels.ts
+ ┃ ┃ ┗ 📜useUserModels.ts
+ ┃ ┗ 📂utils
+ ┃ ┃ ┗ 📜utils.ts
+ ┣ 📂components
+ ┃ ┣ 📂dashboard
+ ┃ ┃ ┣ 📜ExcelDownloadBtn.tsx
+ ┃ ┃ ┣ 📜List.tsx
+ ┃ ┃ ┣ 📜ListHeader.tsx
+ ┃ ┃ ┣ 📜ListItem.tsx
+ ┃ ┃ ┣ 📜PageNation.tsx
+ ┃ ┃ ┣ 📜SearchBar.tsx
+ ┃ ┃ ┗ 📜dashboard.css
+ ┃ ┣ 📂form
+ ┃ ┃ ┣ 📜FormCheckboxBtn.tsx
+ ┃ ┃ ┣ 📜FormInput.tsx
+ ┃ ┃ ┣ 📜FormRadio.tsx
+ ┃ ┃ ┗ 📜FormSelect.tsx
+ ┃ ┣ 📂layout
+ ┃ ┃ ┣ 📜Card.tsx
+ ┃ ┃ ┣ 📜CircularMenu.tsx
+ ┃ ┃ ┣ 📜Header.tsx
+ ┃ ┃ ┣ 📜LandingPage.tsx
+ ┃ ┃ ┣ 📜Layout.tsx
+ ┃ ┃ ┣ 📜MobileHeader.tsx
+ ┃ ┃ ┗ 📜MobileLayout.tsx
+ ┃ ┣ 📂signup
+ ┃ ┃ ┣ 📜ResidenceSelectModal.tsx
+ ┃ ┃ ┣ 📜SignForm.tsx
+ ┃ ┃ ┣ 📜Terms.tsx
+ ┃ ┃ ┗ 📜utils.ts
+ ┃ ┗ 📜.DS_Store
+ ┣ 📂elements
+ ┃ ┣ 📂Animations
+ ┃ ┃ ┣ 📜Animation.styled.ts
+ ┃ ┃ ┣ 📜Animation.tsx
+ ┃ ┃ ┣ 📜ButtonAnimation.styled.ts
+ ┃ ┃ ┗ 📜ButtonAnimation.tsx
+ ┃ ┗ 📂Texts
+ ┃ ┃ ┣ 📜Subtitle.tsx
+ ┃ ┃ ┣ 📜Text.tsx
+ ┃ ┃ ┗ 📜Title.tsx
+ ┣ 📂pages
+ ┃ ┣ 📜About.tsx
+ ┃ ┣ 📜Dashboard.tsx
+ ┃ ┣ 📜Home.tsx
+ ┃ ┣ 📜NotFound404.tsx
+ ┃ ┗ 📜SignUp.tsx
+ ┣ 📂routes
+ ┃ ┗ 📜routes.tsx
+ ┣ 📂static
+ ┃ ┣ 📂Infomations
+ ┃ ┃ ┗ 📜ProfileCardInfo.ts
+ ┃ ┣ 📂animations
+ ┃ ┃ ┣ 📜arrow.json
+ ┃ ┃ ┣ 📜business-background.json
+ ┃ ┃ ┣ 📜complete.json
+ ┃ ┃ ┣ 📜error-404-background.json
+ ┃ ┃ ┣ 📜joyful-background.json
+ ┃ ┃ ┣ 📜loop.json
+ ┃ ┃ ┣ 📜natural-background.json
+ ┃ ┃ ┣ 📜spin-background.json
+ ┃ ┃ ┣ 📜spin2-background.json
+ ┃ ┃ ┣ 📜spin3-background.json
+ ┃ ┃ ┣ 📜spring-background.json
+ ┃ ┃ ┗ 📜underwater-background.json
+ ┃ ┣ 📂fonts
+ ┃ ┃ ┣ 📜MaruBuri-Bold.woff
+ ┃ ┃ ┣ 📜MaruBuri-Light.woff
+ ┃ ┃ ┣ 📜MaruBuri-Regular.woff
+ ┃ ┃ ┣ 📜SpoqaHanSansNeo-Bold.woff
+ ┃ ┃ ┣ 📜SpoqaHanSansNeo-Light.woff
+ ┃ ┃ ┗ 📜SpoqaHanSansNeo-Regular.woff
+ ┃ ┗ 📂images
+ ┃ ┃ ┣ 📜background-mobile-phones.png
+ ┃ ┃ ┣ 📜d.png
+ ┃ ┃ ┗ 📜e.png
+ ┣ 📂store
+ ┃ ┣ 📜dashboard.ts
+ ┃ ┣ 📜form.ts
+ ┃ ┗ 📜global.ts
+ ┣ 📂styles
+ ┃ ┣ 📜GlobalFonts.ts
+ ┃ ┣ 📜GlobalStyles.ts
+ ┃ ┗ 📜theme.ts
+ ┣ 📂types
+ ┃ ┣ 📜dashboard.d.ts
+ ┃ ┣ 📜form.d.ts
+ ┃ ┗ 📜types.d.ts
+ ┣ 📂util
+ ┃ ┣ 📜getAnimations.tsx
+ ┃ ┗ 📜replaceItemIndex.ts
+ ┣ 📜App.tsx
+ ┣ 📜index.css
+ ┣ 📜index.tsx
+ ┗ 📜setupTests.ts
+📜.eslintrc.js
+📜.gitignore
+📜.prettierrc
+📜README.md
+📜package-lock.json
+📜package.json
+📜tsconfig.json
 ```
-
-추가예정
 
 </br>
 
 # 상세 기능 구현 설명
 
-### 수빈
+### 1. UI
+
+#### outter layout 배치 및 구현
+
+- 전체적인 색감을 일치시키고 사용자의 동선을 생각하여 라우팅하였습니다.
+- 버튼에 툴팁, 적절한 아이콘 배치 등으로 ux를 향상시키려 노력했습니다.
+
+#### animations & interations
+
+- lottie files를 활용하여 남는 공간에 적은 용량으로 애니메이션 효과를 주었습니다.
+
+#### responsive web
+
+- 내부 컨텐츠의 상황에 맞게 최대한 많은 기기를 지원하도록 반응형 웹을 제작하였습니다.
 
 </br>
 
-### 민주
+### 2. 지원하기 form (정보입력)
 
-- 회원가입(정보입력)
-  - mui 와 react hook form을 사용해 폼 제작
-  - react hook form으로 입력폼의 값을 api로 json server전달
-</br>
+![form](https://user-images.githubusercontent.com/90506668/181164836-9e0b33d0-687e-456c-b92b-5cb62507eb7c.gif)
 
-### 혜림
+#### UI
 
-- outter layout 배치 및 구현
-  - 전체적인 색감을 일치시키고 사용자의 동선을 생각하여 라우팅하셨습니다.
-  - 버튼에 툴팁, 적절한 아이콘 배치 등으로 ux를 향상시키려 노력했습니다.
-- animations & interations
-  - lottie files를 활용하여 남는 공간에 적은 용량으로 애니메이션 효과를 주었습니다.
-- 반응형 웹 - 내부 컨텐츠의 상황에 맞게 최대한 많은 기기를 지원하도록 반응형 웹을 제작하였습니다.
-  </br>
+- mui 라이브러리를 이용해 form UI 구현
 
-### 승연
+#### Validation
+
+- react hook form으로 유효성 검사 (정규식, 버튼 활성화)
+
+#### Data post
+
+- react hook form으로 입력폼의 값을 api로 json server전달
 
 </br>
 
-### 상지
+### 3. Admin - User Management
+
+#### data fetch & filter api
+
+- 리코일을 이용해 전체데이터 fetch 및 필터링 api 구축
+
+#### 당첨여부 체크박스 toggle callback 구현
+
+- 클릭 시 당첨여부를 변경하는 patch api 실행
+
+#### search bar 구현
+
+- 필터 로직 연결
+
+#### csv 다운로드 구현

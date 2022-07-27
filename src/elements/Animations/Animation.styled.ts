@@ -12,7 +12,6 @@ export const Container = styled.div<{ size?: string }>`
   align-items: center;
   justify-content: center;
   object-fit: ${(props) => (props.size === "For404Animation" ? "contain" : "")};
-  /* background-color: #f6e58d; */
 `;
 
 export const LottieWrapper = styled(Lottie)`

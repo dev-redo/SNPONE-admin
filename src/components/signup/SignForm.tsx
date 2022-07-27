@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   FormGroup,
   FormControlLabel,
@@ -106,10 +106,6 @@ const SignForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormGroup>
-        {/* <FormControlLabel
-        control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked />}
-        label="mode switch"
-        /> */}
         <InputHidden {...register("date")} value={today} />
         {/* <InputHidden {...register("id")} value={userId} /> */}
         <CheckboxHidden {...register("isChecked")} />
@@ -166,8 +162,9 @@ const SignForm = () => {
           name="phone"
           control={control}
           inputProps={{
-            maxLength: 13,
+            maxLength: 11,
           }}
+          placeholder="01012345678"
           required={true}
           pattern={RegexPhone.regex}
           errorMessage={RegexPhone.message}
@@ -180,6 +177,7 @@ const SignForm = () => {
           required={true}
           pattern={RegexEmail.regex}
           errorMessage={RegexEmail.message}
+          placeholder="snpone@gmail.com"
         />
         <Box sx={{ mb: 2 }}>
           <Typography variant="h6">주로 이용하는 교통 수단</Typography>
