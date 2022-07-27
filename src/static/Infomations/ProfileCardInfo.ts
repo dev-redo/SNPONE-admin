@@ -14,10 +14,10 @@ export const ProfileCardInfo = [
   },
   {
     name: "김수빈",
-    called: "맡은일",
-    desc: "무엇 무엇을 맡았습니다 등니다 등니다 등니다 등니다 등니다 등니다 등니다 등니다 등니다 등",
+    called: "form UI & validation",
+    desc: "MUI, react-hook-form",
     profilePicture:
-      "https://images.unsplash.com/photo-1612428978260-2b9c7df20150?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80",
+      "https://images.unsplash.com/photo-1511143635062-219d1242e01c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80",
   },
   {
     name: "김민주",
