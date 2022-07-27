@@ -162,8 +162,9 @@ const SignForm = () => {
           name="phone"
           control={control}
           inputProps={{
-            maxLength: 13,
+            maxLength: 11,
           }}
+          placeholder="01012345678"
           required={true}
           pattern={RegexPhone.regex}
           errorMessage={RegexPhone.message}
@@ -176,6 +177,7 @@ const SignForm = () => {
           required={true}
           pattern={RegexEmail.regex}
           errorMessage={RegexEmail.message}
+          placeholder="snpone@gmail.com"
         />
         <Box sx={{ mb: 2 }}>
           <Typography variant="h6">주로 이용하는 교통 수단</Typography>
